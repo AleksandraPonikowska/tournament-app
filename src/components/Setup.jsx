@@ -1,14 +1,25 @@
 import React, { useState } from "react";
 
 function Setup() {
-  const [count, setCount] = useState(0);  // 0 to wartość początkowa
+  const [contestants, setContestants] = useState("meow");
 
+    const handleSubmit = (e) =>{
+        e.preventDefault(); //przeładowywanie sie
+        alert(`${contestants}`);
+    }
   return (
     <div>
-      <p>Current count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>
-        Increase
-      </button>
+      <form onSubmit={handleSubmit}>
+        <label>
+            <input 
+                type="text"
+                value={contestants}
+                onChange={(e) => setContestants(e.target.value)}
+                placeholder="meow"
+            />
+        </label>
+        <button type="submit">Submit</button>
+        </form>
     </div>
   );
 }
