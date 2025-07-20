@@ -4,7 +4,11 @@ function Contest({contestants}) {
 
   return (
     <div>
-      {contestants}
+      <ol>
+        {contestants.slice(1).map(el => (
+          <li>{el}</li>
+        ))}
+      </ol>
     </div>
   );
 }

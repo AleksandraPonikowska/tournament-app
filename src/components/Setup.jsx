@@ -1,22 +1,26 @@
 import React, { useState } from "react";
 
 function Setup({onStart}) {
-  const [contestants, setContestants] = useState("meow");
+  const [contestants, setContestants] = useState("miau miau\nkotek\ntruskawka\nhopsa hopsa");
 
     const handleSubmit = (e) =>{
-        e.preventDefault(); //przeładowywanie sie
-        //alert(`${contestants}`);
-        onStart(`${contestants}`);
+        e.preventDefault();
+
+        const list2 = contestants.split("\n")
+        const list1 = Array(list2.length).fill("???");
+        
+        onStart(Array.prototype.concat(list1, list2));
     }
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <label>
-            <input 
+            <textarea
                 type="text"
+                rows = {8}
                 value={contestants}
                 onChange={(e) => setContestants(e.target.value)}
-                placeholder="meow"
+                placeholder=""
             />
         </label>
         <button type="submit">Submit</button>
