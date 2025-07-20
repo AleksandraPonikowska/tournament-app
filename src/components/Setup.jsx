@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
-function Setup() {
+function Setup({onStart}) {
   const [contestants, setContestants] = useState("meow");
 
     const handleSubmit = (e) =>{
         e.preventDefault(); //przeładowywanie sie
-        alert(`${contestants}`);
+        //alert(`${contestants}`);
+        onStart(`${contestants}`);
     }
   return (
     <div>
