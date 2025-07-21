@@ -4,6 +4,8 @@
 }
 
 html, body {
+    margin: 0;
+  padding: 0;
   background-color: rgb(233, 237, 239);
   font-family: 'Alata';
   display: flex;
@@ -34,14 +36,37 @@ form {
   justify-content: center;
 }
 
-form button {
+button {
   font-family: 'Alata';
+  border: 0pt;
+}
+
+form button {
+
   width: 30vw;
   font-size: 1.2em;
   background-color: rgb(52, 84, 107);
-  border: 0pt;
+  
   color: white;
   padding: 5px;
   border-radius: 5pt;
+}
+
+.duel{
+  display: flex;
+
+}
+
+divv button {
+  width: 50vw;
+  height: 100vh;
+  color: rgb(52, 84, 107);
+  font-size: 2em;
+}
+
+
+divvv {
+  display: flex;
+  flex-direction: column	;
 }
 

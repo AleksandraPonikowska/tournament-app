@@ -4,18 +4,14 @@ function Brackets({contestants, onDuelStart}) {
 
 
   return (
-    <div>
-      <ol>
+    <divvv>
         {contestants.slice(1).map((el, index) => (
-          <li>
           <button onClick={() => onDuelStart(index+1)}>
               {el}
             </button>
           
-          </li>
         ))}
-      </ol>
-    </div>
+    </divvv>
   );
 }
 

@@ -3,7 +3,7 @@ import Brackets from "./Brackets";
 import Duel from "./Duel";
 
 
-function Contest({contestants, setContestants}) {
+function Contest({contestants}) {
 
   const [view, setView] = useState("brackets");
   const [duelId, setDuelId] = useState(contestants.length);
