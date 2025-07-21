@@ -13,11 +13,17 @@ html, body {
   box-sizing: border-box;
   justify-content: center;
 
+  text-align: center;  
+}
+
+h2 {
+  color: rgb(52, 84, 107);
 }
 
 textarea {
   font-family: 'Alata';
   width: 50vw;
+  font-size: 1.2em;
 
 }
 
@@ -25,7 +31,17 @@ form {
   display: flex;
   flex-direction: column	;
   align-items: center;
-    justify-content: center;
-
-
+  justify-content: center;
 }
+
+form button {
+  font-family: 'Alata';
+  width: 30vw;
+  font-size: 1.2em;
+  background-color: rgb(52, 84, 107);
+  border: 0pt;
+  color: white;
+  padding: 5px;
+  border-radius: 5pt;
+}
+

@@ -25,7 +25,7 @@ function Setup({onStart}) {
             />
         </label>
         <p>
-          <button type="submit">Submit</button>
+          <button type="submit">START</button>
         </p>
 
         </form>
