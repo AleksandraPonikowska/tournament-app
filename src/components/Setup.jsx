@@ -13,6 +13,7 @@ function Setup({onStart}) {
     }
   return (
     <div>
+      <h2>ENTER CONTESTANTS</h2>
       <form onSubmit={handleSubmit}>
         <label>
             <textarea
@@ -23,7 +24,10 @@ function Setup({onStart}) {
                 placeholder=""
             />
         </label>
-        <button type="submit">Submit</button>
+        <p>
+          <button type="submit">Submit</button>
+        </p>
+
         </form>
     </div>
   );
