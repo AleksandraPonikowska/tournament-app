@@ -9,8 +9,12 @@ function Contest({contestants}) {
   const [duelId, setDuelId] = useState(contestants.length);
 
   function handleDuelStart(id) {
-    setDuelId(id);
-    setView("duel")
+
+    if (contestants[id] == "???" && contestants[id*2] != "???" && contestants[id*2+1] != "???"){
+      setDuelId(id);
+      setView("duel")
+    }
+    
   }
 
   function handleDuelEnd(winner) {
