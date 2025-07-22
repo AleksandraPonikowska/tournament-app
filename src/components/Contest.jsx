@@ -10,7 +10,7 @@ function Contest({contestants}) {
 
   function handleDuelStart(id) {
 
-    if (contestants[id] == "???" && contestants[id*2] != "???" && contestants[id*2+1] != "???"){
+    if (contestants[id].name == "???" && contestants[id*2].name != "???" && contestants[id*2+1].name != "???"){
       setDuelId(id);
       setView("duel")
     }

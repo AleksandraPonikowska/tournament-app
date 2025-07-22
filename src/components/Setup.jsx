@@ -1,16 +1,32 @@
 import React, { useState } from "react";
 
 function Setup({onStart}) {
-  const [contestants, setContestants] = useState("miau miau\nkotek\ntruskawka\nhopsa hopsa");
+  const [contestants, setContestants] = useState("miau miau https://img.freepik.com/darmowe-zdjecie/maly-kot-siedzi-na-trawie_1150-17019.jpg?semt=ais_hybrid&w=740\nkotek https://www.pastelowelove.pl/userdata/public/gfx/5582/kotek-mruczek--naklejka.-naklejka-dla-dzieci.-dekoracje-pokoju.jpg\ntruskawka https://zielonyogrod.pl/hpeciai/0fff38b78a57407f146c11926af92cee/pol_pl_10-szt-Truskawka-Hossa-powtarza-owocowanie-Sadzonki-184779_1.jpg\nhopsa hopsa https://milavet.pl/wp-content/uploads/2024/09/MILAVET.PL-10-1.jpg");
 
-    const handleSubmit = (e) =>{
-        e.preventDefault();
+    const handleSubmit = (e) => {
+      e.preventDefault();
 
-        const list2 = contestants.split("\n")
-        const list1 = Array(list2.length).fill("???");
-        
-        onStart(Array.prototype.concat(list1, list2));
-    }
+      const parsed = contestants
+        .split("\n")
+        .map((line, i) => {
+          const words = line.trim().split(" ");
+          const image = words.pop();
+          const name = words.join(" ");
+
+          return { name, image, id: i };
+        });
+
+      const placeholders = parsed.map((_, i) => ({
+        name: "???",
+        image: null,
+        id: i
+      }));
+
+      const fullList = placeholders.concat(parsed);
+
+      onStart(fullList);
+    };
+
   return (
     <div>
       <h2>ENTER CONTESTANTS</h2>

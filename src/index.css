@@ -57,16 +57,40 @@ form button {
 
 }
 
-divv button {
-  width: 50vw;
-  height: 100vh;
-  color: rgb(52, 84, 107);
-  font-size: 2em;
-}
 
 
-divvv {
+.brackets {
   display: flex;
-  flex-direction: column	;
+  flex-direction: row;
+  height: 100vh;
+  width: 100vw;
+  
 }
 
+.round {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh; /* żeby runda wypełniała wysokość okna */
+}
+
+.round button {
+  flex: 1;              /* zajmuje całą możliwą wysokość w kolumnie */
+  width: 100%;          /* zajmuje całą szerokość kontenera round */
+  padding: 0;           /* usuń padding, żeby obrazek się rozciągnął */
+  border: none;
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contestant {
+  width: 100pt;
+  height: 100pt;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;  /* usuń marginesy inline */
+}
