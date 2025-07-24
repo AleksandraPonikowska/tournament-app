@@ -89,8 +89,7 @@ form button {
 
 .contestant {
   width: 100pt;
-  height: 100pt;
   border-radius: 8px;
   object-fit: cover;
-  display: block;  /* usuń marginesy inline */
+  display: block; 
 }

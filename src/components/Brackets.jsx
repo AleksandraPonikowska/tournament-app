@@ -1,11 +1,8 @@
 import React from "react";
 import Contestant from "./Contestant";
 
-
 function Brackets({ contestants, onDuelStart }) {
-
-  let indexedContestants = [...contestants]; 
-
+  let indexedContestants = [...contestants];
   let rounds = [];
 
   while (indexedContestants.length > 1) {
@@ -26,37 +23,47 @@ function Brackets({ contestants, onDuelStart }) {
     const secondHalf = round.slice(half);
 
     firstHalves.push(firstHalf);
-
-    if (secondHalf.length >= 1){
+    if (secondHalf.length >= 1) {
       secondHalves.push(secondHalf);
     }
-      
   }
 
   rounds = firstHalves.concat(secondHalves.reverse());
 
+  const totalRounds = rounds.length;
 
+  // Wyliczanie wysokości rund
+  const getHeightForRound = (index) => {
+    if (totalRounds === 13) {
+      if (index === 0 || index === totalRounds - 1) return 25;
+      if (index === 1 || index === totalRounds - 2) return 50;
+    } else if (totalRounds === 11) {
+      if (index === 0 || index === totalRounds - 1) return 50;
+    }
+    return 100;
+  };
 
   return (
     <div className="brackets">
-      {rounds.map((round, roundIndex) => (
-        <div key={roundIndex} className="round">
-          {round.map((el) => (
-            
-
-            <Contestant
-              key={el.id}
-              id={el.id}
-              name={el.name}
-              image={el.image}
-              onClick={onDuelStart}
-            />
-          ))}
-        </div>
-      ))}
+      {rounds.map((round, roundIndex) => {
+        const height = getHeightForRound(roundIndex);
+        return (
+          <div key={roundIndex} className="round">
+            {round.map((el) => (
+              <Contestant
+                key={el.id}
+                id={el.id}
+                name={el.name}
+                image={el.image}
+                height={height}
+                onClick={onDuelStart}
+              />
+            ))}
+          </div>
+        );
+      })}
     </div>
   );
-
 }
 
 export default Brackets;
