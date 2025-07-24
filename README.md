@@ -1,4 +1,5 @@
 # DO-TO
-* add photos and parse photos
-* brackets css and design
+* brackets css and design (respond to size)
 * duel css and design
+* scale up/scale down
+* add timer
