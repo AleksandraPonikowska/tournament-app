@@ -22,9 +22,9 @@ function Setup({onStart}) {
 
       while (!isPowerOfTwo(parsed.length)) {
         parsed.push({
-          name: "???",
+          name: "-",
           image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
-          id: parsed.length
+          id: parsed.length + 10000
         });
       }
 
@@ -47,6 +47,7 @@ function Setup({onStart}) {
       const fullList = placeholders.concat(parsed);
 
       onStart(fullList);
+
     };
 
   return (
