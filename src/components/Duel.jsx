@@ -1,12 +1,17 @@
 import React from "react";
 
-function Duel({rivals, onDuelEnd}) {
-
+function Duel({ rivals, onDuelEnd }) {
   return (
-    <divv class = "duel">
-        <button onClick={() => onDuelEnd(rivals[0])}>{rivals[0].name}</button>
-        <button onClick={() => onDuelEnd(rivals[1])}>{rivals[1].name}</button>
-    </divv>
+    <div className="duel">
+      {rivals.map((rival) => (
+        <div key={rival.id} className="rival">
+          <img src={rival.image} alt={rival.name} className="rival-image" />
+          <button className="rival-button" onClick={() => onDuelEnd(rival)}>
+            {rival.name}
+          </button>
+        </div>
+      ))}
+    </div>
   );
 }
 

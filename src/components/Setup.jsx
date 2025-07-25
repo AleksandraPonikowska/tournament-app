@@ -16,6 +16,28 @@ function Setup({onStart}) {
           return { name, image, id: i };
         });
 
+      function isPowerOfTwo(n) {
+        return n > 0 && (n & (n - 1)) === 0;
+      }
+
+      while (!isPowerOfTwo(parsed.length)) {
+        parsed.push({
+          name: "???",
+          image: "https://upload.wikimedia.org/wikipedia/commons/a/ac/Default_pfp.jpg",
+          id: parsed.length
+        });
+      }
+
+      function shuffle(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [array[i], array[j]] = [array[j], array[i]];
+        }
+      }
+
+      shuffle(parsed);
+
+
       const placeholders = parsed.map((_, i) => ({
         name: "???",
         image: null,
